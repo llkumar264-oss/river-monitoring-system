@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — River Monitoring System</title>
+  <meta name="description" content="River Monitoring System Government Environmental Monitoring Platform">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🌊</div>
+      <div class="logo-text">
+        <div class="title">River<br>Monitoring</div>
+        <div class="sub">System v2.0</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item active" href="dashboard.html" id="nav-dashboard">
+        <span class="nav-icon">⊞</span> Dashboard
+      </a>
+      <a class="nav-item" href="live.html" id="nav-live">
+        <span class="nav-icon">〜</span> Live Monitoring
+      </a>
+      <a class="nav-item" href="map.html" id="nav-map">
+        <span class="nav-icon">📍</span> Hotspots Map
+      </a>
+      <a class="nav-item" href="complaints.html" id="nav-complaints">
+        <span class="nav-icon">💬</span> Complaints
+      </a>
+      <a class="nav-item" href="analytics.html" id="nav-analytics">
+        <span class="nav-icon">📊</span> Analytics
+      </a>
+      <a class="nav-item" href="alerts.html" id="nav-alerts">
+        <span class="nav-icon">🔔</span> Alerts
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="citizen-btn" onclick="window.location.href='citizen.html'">Citizen Portal</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="page-title">River Monitoring System</div>
+        <div class="page-subtitle">Government Environmental Monitoring Platform</div>
+      </div>
+      <div class="header-right">
+        <button class="dark-toggle" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+        <div class="user-info">
+          <div class="user-name">Gov Admin</div>
+          <div class="user-role">Administrator</div>
+        </div>
+        <div class="user-avatar">GA</div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content" id="dashboard">
+
+      <!-- STATS GRID -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-info">
+            <div class="label">Total Sensors Active</div>
+            <div class="value" id="sensorCount">—</div>
+            <div class="change up" id="sensorChange">⬆ +12 from last week</div>
+          </div>
+          <div class="stat-icon blue">📡</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info">
+            <div class="label">Pollution Alerts</div>
+            <div class="value" id="alertCount">—</div>
+            <div class="change down" id="alertChange">⬇ -8 from last week</div>
+          </div>
+          <div class="stat-icon red">⚠️</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info">
+            <div class="label">Complaints Received</div>
+            <div class="value" id="complaintCount">—</div>
+            <div class="change up" id="complaintChange">⬆ +23 from last week</div>
+          </div>
+          <div class="stat-icon purple">💬</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info">
+            <div class="label">Critical Zones</div>
+            <div class="value" id="criticalCount">—</div>
+            <div class="change down" id="criticalChange">⬇ -2 from last week</div>
+          </div>
+          <div class="stat-icon green">📍</div>
+        </div>
+      </div>
+
+      <!-- CHARTS -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-title">pH Level Trends</div>
+          <div class="chart-sub">Last 24 hours monitoring</div>
+          <canvas id="phChart" height="130"></canvas>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Turbidity Levels (NTU)</div>
+          <div class="chart-sub">Water clarity measurement</div>
+          <canvas id="turbidityChart" height="130"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toast">✅ Done</div>
+
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

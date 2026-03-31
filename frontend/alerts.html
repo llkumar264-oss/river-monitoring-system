@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerts — River Monitoring System</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🌊</div>
+      <div class="logo-text">
+        <div class="title">River<br>Monitoring</div>
+        <div class="sub">System v2.0</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="live.html"><span class="nav-icon">〜</span> Live Monitoring</a>
+      <a class="nav-item" href="map.html"><span class="nav-icon">📍</span> Hotspots Map</a>
+      <a class="nav-item" href="complaints.html"><span class="nav-icon">💬</span> Complaints</a>
+      <a class="nav-item" href="analytics.html"><span class="nav-icon">📊</span> Analytics</a>
+      <a class="nav-item active" href="alerts.html"><span class="nav-icon">🔔</span> Alerts</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="citizen-btn" onclick="window.location.href='citizen.html'">Citizen Portal</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="header">
+      <div class="header-left">
+        <div class="page-title">River Monitoring System</div>
+        <div class="page-subtitle">Government Environmental Monitoring Platform</div>
+      </div>
+      <div class="header-right">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+        <div class="user-info">
+          <div class="user-name">Gov Admin</div>
+          <div class="user-role">Administrator</div>
+        </div>
+        <div class="user-avatar">GA</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-header">
+        <h2>Alerts</h2>
+        <p>Active environmental alerts and system notifications</p>
+      </div>
+
+      <div class="alerts-list" id="alertsList">
+        <div class="alert-card"><div class="skeleton" style="height:60px;flex:1;"></div></div>
+        <div class="alert-card"><div class="skeleton" style="height:60px;flex:1;"></div></div>
+        <div class="alert-card"><div class="skeleton" style="height:60px;flex:1;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast">✅ Done</div>
+  <script src="js/app.js"></script>
+  <script src="js/alertspage.js"></script>
+</body>
+</html>

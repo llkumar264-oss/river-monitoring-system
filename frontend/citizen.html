@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Portal — River Monitoring System</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🌊</div>
+      <div class="logo-text">
+        <div class="title">River<br>Monitoring</div>
+        <div class="sub">System v2.0</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="live.html"><span class="nav-icon">〜</span> Live Monitoring</a>
+      <a class="nav-item" href="map.html"><span class="nav-icon">📍</span> Hotspots Map</a>
+      <a class="nav-item" href="complaints.html"><span class="nav-icon">💬</span> Complaints</a>
+      <a class="nav-item" href="analytics.html"><span class="nav-icon">📊</span> Analytics</a>
+      <a class="nav-item" href="alerts.html"><span class="nav-icon">🔔</span> Alerts</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="citizen-btn" onclick="window.location.href='citizen.html'" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);">← Back to Admin</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="header">
+      <div class="header-left">
+        <div class="page-title">Citizen Portal</div>
+        <div class="page-subtitle">Report environmental issues and track your complaints</div>
+      </div>
+      <div class="header-right">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="form-card">
+        <h3>📋 Register a Complaint</h3>
+
+        <form id="complaintForm" onsubmit="submitComplaint(event)">
+
+          <div class="form-group">
+            <label>Full Name</label>
+            <input class="form-control" type="text" id="c_name" placeholder="e.g. Rahul Sharma" required>
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input class="form-control" type="text" id="c_phone" placeholder="e.g. +91 98765 43210" required>
+          </div>
+
+          <div class="form-group">
+            <label>Location / Area</label>
+            <input class="form-control" type="text" id="c_location" placeholder="e.g. Sector 12, River Point A" required>
+          </div>
+
+          <div class="form-group">
+            <label>Severity</label>
+            <div class="severity-group">
+              <div class="severity-option" id="sev-high" onclick="selectSeverity('high')">🔴 High</div>
+              <div class="severity-option" id="sev-medium" onclick="selectSeverity('medium')">🟡 Medium</div>
+              <div class="severity-option" id="sev-low" onclick="selectSeverity('low')">🟢 Low</div>
+            </div>
+            <input type="hidden" id="c_severity" value="medium">
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" id="c_desc" placeholder="Describe the environmental issue in detail..." rows="4" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Upload Evidence (Photo / Video)</label>
+            <div class="file-upload-area" onclick="document.getElementById('c_file').click()">
+              <div class="upload-icon">📷</div>
+              <p>Click to select image or video file</p>
+            </div>
+            <input type="file" id="c_file" accept="image/*,video/*" style="display:none" onchange="previewFile(this)">
+            <div id="preview"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;padding:13px;font-size:14px;justify-content:center;">
+            Submit Complaint
+          </button>
+
+        </form>
+
+        <div class="divider"></div>
+
+        <h3 style="margin-bottom:14px;">📌 Your Recent Complaints</h3>
+        <div id="myComplaints">
+          <p style="color:var(--text-muted);font-size:13px;">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast">✅ Done</div>
+  <script src="js/app.js"></script>
+  <script src="js/citizen.js"></script>
+</body>
+</html>
