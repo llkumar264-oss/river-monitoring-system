@@ -174,6 +174,8 @@ Backend configuration:
 
 * Lalit Kumar
 * Devraj Singh
+* Anu chaudhary
+* Bharti chaudhary
 
 ---
 
