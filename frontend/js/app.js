@@ -2,7 +2,7 @@
    app.js — Shared utilities, dark mode, toast
    ============================================= */
 
-const API = "http://127.0.0.1:8000";
+const API = "https://river-monitoring-system.onrender.com";
 
 // Dark mode
 function toggleDark() {
